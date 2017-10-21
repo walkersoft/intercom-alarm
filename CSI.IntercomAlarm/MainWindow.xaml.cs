@@ -11,15 +11,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CSI.IntercomAlarm.ViewModels;
 
 namespace CSI.IntercomAlarm
 {
     public partial class MainWindow : Window
     {
+        MainWindowViewModel viewModel;
+
         public MainWindow()
         {
             InitializeComponent();
             DoStartupControlEnablementSetup();
+
+            viewModel = new MainWindowViewModel(this);
         }
 
         void DoStartupControlEnablementSetup()
