@@ -35,7 +35,7 @@
                 <Label Content="Add/Edit Alarm" FontWeight="Bold"/>
                 <Label Content="|"/>
                 <Label Content="Current Alarms File: "/>
-                <Label x:Name="currentAlarmFilename" Width="Auto"/>
+                <Label x:Name="currentAlarmFilename" Width="300"/>
             </WrapPanel>
 
             <WrapPanel Margin="0,0,5,0">
@@ -59,7 +59,7 @@
             <WrapPanel>
                 <StackPanel Margin="5,0,0,0">
                     <Label Content="Current Alarms" FontWeight="Bold"/>
-                    <DataGrid x:Name="currentAlarmsGrid" MinHeight="170">
+                    <DataGrid x:Name="currentAlarmsGrid" AutoGenerateColumns="False" MinHeight="170">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Alarm Title" Width="140"/>
                             <DataGridTextColumn Header="Alarm Time" Width="100"/>
@@ -90,7 +90,7 @@
 
 
                     <WrapPanel Margin="0,5,0,0">
-                        <Button HorizontalAlignment="Right" Width="30">
+                        <Button x:Name="alarmTestButton" HorizontalAlignment="Right" Width="30">
                             <Image Source="Resources/audio-volume-high.png"/>
                         </Button>
                         <Label Content="Test Alarm Sound"/>
