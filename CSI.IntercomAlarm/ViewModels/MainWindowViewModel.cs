@@ -12,13 +12,16 @@ namespace CSI.IntercomAlarm.ViewModels
     {
         AlarmPlayer alarmPlayer;
         AlarmFileManager alarmManager;
+        AlarmScheduler alarmScheduler;
         MainWindow mainWindow;
         
         public MainWindowViewModel(MainWindow window)
         {
             alarmPlayer = new AlarmPlayer();
             alarmManager = new AlarmFileManager();
+            alarmScheduler = new AlarmScheduler(alarmPlayer);
             mainWindow = window;
+            ConfigureAlarmPlayer();
         }
 
         public ObservableCollection<Alarm> GetNewAlarmSet(string filename)
@@ -34,6 +37,7 @@ namespace CSI.IntercomAlarm.ViewModels
             AlarmFile alarmFile;
 
             alarmFile = alarmManager.OpenAlarmFile(filename);
+            ScheduleAlarms(alarmFile.Alarms);
             return alarmFile.Alarms;
         }
 
@@ -41,11 +45,37 @@ namespace CSI.IntercomAlarm.ViewModels
         {
             AlarmFile alarmFile = new AlarmFile(alarms);
             alarmManager.SaveAlarmFile(filename, alarmFile);
+            ScheduleAlarms(alarms);
+        }
+
+        void PlayAlarm()
+        {
+            alarmPlayer.PlayAlarm();
         }
 
         public void PlayDefaultAlarm()
         {
-            alarmPlayer.PlayDefaultAlarm();
+            alarmPlayer.UsingDefaultSound = true;
+            PlayAlarm();
+        }
+
+        public void ScheduleAlarms(ObservableCollection<Alarm> alarms)
+        {
+            alarmScheduler.ClearAllTimers();
+
+            foreach(Alarm alarm in alarms)
+            {
+                if (alarm.IsActive)
+                {
+                    TimeSpan startingTime = alarm.GetNativeAlarmTime().TimeOfDay;
+                    alarmScheduler.ScheduleAlarm(startingTime);
+                }
+            }
+        }
+
+        void ConfigureAlarmPlayer()
+        {
+            alarmPlayer.UsingDefaultSound = mainWindow.IsUsingDefaultAlarm();
         }
     }
 }

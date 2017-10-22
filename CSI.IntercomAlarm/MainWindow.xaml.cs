@@ -234,5 +234,10 @@ namespace CSI.IntercomAlarm
 
             return dateTime;
         }
+
+        public bool IsUsingDefaultAlarm()
+        {
+            return useDefaultSoundCheckbox.IsChecked == true;
+        }
     }
 }

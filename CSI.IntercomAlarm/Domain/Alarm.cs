@@ -31,5 +31,10 @@ namespace CSI.IntercomAlarm.Domain
 
             return newTime;
         }
+
+        public DateTime GetNativeAlarmTime()
+        {
+            return alarmTime;
+        }
     }
 }
