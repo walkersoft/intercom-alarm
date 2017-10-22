@@ -173,28 +173,26 @@ namespace CSI.IntercomAlarm
 
         void CreateNewAlarmsFile(object sender, RoutedEventArgs e)
         {            
-            if (saveDialog.ShowDialog() == true)
+            if (saveDialog.ShowDialog() == true && saveDialog.FileName.Length > 0)
             {
                 currentAlarms = viewModel.GetNewAlarmSet(saveDialog.FileName);
                 UpdateCurrentAlarmsFilenameContent(saveDialog.FileName);
                 UpdateAlarmDataGridCollectionWithCurrentAlarms();
+                EnableAlarmTimeSetupControls();
+                EnableAlarmGridControls();
             }
-
-            EnableAlarmTimeSetupControls();
-            EnableAlarmGridControls();
         }
 
         void OpenNewAlarmsFile(object sender, RoutedEventArgs e)
         {
-            if (openDialog.ShowDialog() == true)
+            if (openDialog.ShowDialog() == true && openDialog.FileName.Length > 0)
             {
                 currentAlarms = viewModel.OpenAlarmSet(openDialog.FileName);
                 UpdateCurrentAlarmsFilenameContent(openDialog.FileName);
                 UpdateAlarmDataGridCollectionWithCurrentAlarms();
+                EnableAlarmTimeSetupControls();
+                EnableAlarmGridControls();
             }
-
-            EnableAlarmTimeSetupControls();
-            EnableAlarmGridControls();
         }
 
         void SaveAlarmsFile(object sender, RoutedEventArgs e)
@@ -259,7 +257,7 @@ namespace CSI.IntercomAlarm
                 Filter = "Wave Sound File (*.wav)|*.wav"
             };
 
-            if (openDialog.ShowDialog() == true)
+            if (openDialog.ShowDialog() == true && openDialog.FileName.Length > 0)
             {
                 alarmSoundFilenameTextbox.Text = openDialog.FileName;
                 viewModel.ConfigureAlarmPlayer();
