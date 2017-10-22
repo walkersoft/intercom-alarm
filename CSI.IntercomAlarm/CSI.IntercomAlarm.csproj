@@ -95,7 +95,7 @@
     <Resource Include="Resources\audio-volume-high.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\alarm_bell_wav.wav" />
+    <None Include="Resources\alarm_bell_wav.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

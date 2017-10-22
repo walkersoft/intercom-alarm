@@ -59,5 +59,14 @@ namespace CSI.IntercomAlarm.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream AlarmBellSound {
+            get {
+                return ResourceManager.GetStream("AlarmBellSound", resourceCulture);
+            }
+        }
     }
 }
