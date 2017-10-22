@@ -9,11 +9,13 @@ namespace CSI.IntercomAlarm.ViewModels
 {
     public class MainWindowViewModel
     {
+        AlarmPlayer alarmPlayer;
         AlarmFileManager alarmManager;
         MainWindow mainWindow;
         
         public MainWindowViewModel(MainWindow window)
         {
+            alarmPlayer = new AlarmPlayer();
             alarmManager = new AlarmFileManager();
             mainWindow = window;
         }
@@ -38,6 +40,11 @@ namespace CSI.IntercomAlarm.ViewModels
         {
             AlarmFile alarmFile = new AlarmFile(alarms);
             alarmManager.SaveAlarmFile(filename, alarmFile);
+        }
+
+        public void PlayDefaultAlarm()
+        {
+            alarmPlayer.PlayDefaultAlarm();
         }
     }
 }

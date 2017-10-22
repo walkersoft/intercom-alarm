@@ -189,9 +189,17 @@ namespace CSI.IntercomAlarm
             EnableAlarmGridControls();
         }
 
-        private void SaveAlarmsFile(object sender, RoutedEventArgs e)
+        void SaveAlarmsFile(object sender, RoutedEventArgs e)
         {
             viewModel.SaveAlarmSet(currentAlarmFilename, currentAlarms);
+        }
+
+        void TestPlayingAlarmSound(object sender, RoutedEventArgs e)
+        {
+            if (useDefaultSoundCheckbox.IsChecked == true)
+            {
+                viewModel.PlayDefaultAlarm();
+            }
         }
     }
 }

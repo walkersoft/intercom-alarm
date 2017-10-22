@@ -90,7 +90,7 @@
 
 
                     <WrapPanel Margin="0,5,0,0">
-                        <Button x:Name="alarmTestButton" HorizontalAlignment="Right" Width="30">
+                        <Button x:Name="alarmTestButton" HorizontalAlignment="Right" Width="30" Click="TestPlayingAlarmSound">
                             <Image Source="Resources/audio-volume-high.png"/>
                         </Button>
                         <Label Content="Test Alarm Sound"/>

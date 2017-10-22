@@ -52,6 +52,7 @@
     </ApplicationDefinition>
     <Compile Include="Domain\AlarmFile.cs" />
     <Compile Include="Domain\AlarmFileManager.cs" />
+    <Compile Include="Domain\AlarmPlayer.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -92,10 +93,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\audio-volume-high.png" />
+    <Resource Include="Resources\audio-volume-high.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\alarm_bell_wav.wav" />
+    <None Include="Resources\alarm_bell_wav.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
