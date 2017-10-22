@@ -25,7 +25,7 @@
                 <MenuItem Header="Save Alarms" Click="SaveAlarmsFile"/>
                 <MenuItem Header="Save Alarms As..." Click="CreateNewAlarmsFile"/>
                 <Separator/>
-                <MenuItem Header="Close"/>
+                <MenuItem Header="Close" Click="CloseApplication"/>
             </MenuItem>
         </Menu>
 

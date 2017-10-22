@@ -265,5 +265,10 @@ namespace CSI.IntercomAlarm
                 viewModel.ConfigureAlarmPlayer();
             }
         }
+
+        private void CloseApplication(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
