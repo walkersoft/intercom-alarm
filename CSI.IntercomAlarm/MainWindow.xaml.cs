@@ -110,6 +110,12 @@ namespace CSI.IntercomAlarm
             viewModel = new MainWindowViewModel(this);
         }
 
+        void UpdateAlarmDataGridCollectionWithCurrentAlarms()
+        {
+            currentAlarmsGrid.ItemsSource = currentAlarms;
+            currentAlarmsGrid.Items.Refresh();
+        }
+
         void PopulateTimerSelections()
         {
             PopulateHourSelection();
@@ -171,6 +177,7 @@ namespace CSI.IntercomAlarm
             {
                 currentAlarms = viewModel.GetNewAlarmSet(saveDialog.FileName);
                 UpdateCurrentAlarmsFilenameContent(saveDialog.FileName);
+                UpdateAlarmDataGridCollectionWithCurrentAlarms();
             }
 
             EnableAlarmTimeSetupControls();
@@ -183,6 +190,7 @@ namespace CSI.IntercomAlarm
             {
                 currentAlarms = viewModel.OpenAlarmSet(openDialog.FileName);
                 UpdateCurrentAlarmsFilenameContent(openDialog.FileName);
+                UpdateAlarmDataGridCollectionWithCurrentAlarms();
             }
 
             EnableAlarmTimeSetupControls();
@@ -192,6 +200,8 @@ namespace CSI.IntercomAlarm
         void SaveAlarmsFile(object sender, RoutedEventArgs e)
         {
             viewModel.SaveAlarmSet(currentAlarmFilename, currentAlarms);
+            currentAlarms = viewModel.OpenAlarmSet(currentAlarmFilename);
+            UpdateAlarmDataGridCollectionWithCurrentAlarms();
         }
 
         void TestPlayingAlarmSound(object sender, RoutedEventArgs e)
@@ -200,6 +210,29 @@ namespace CSI.IntercomAlarm
             {
                 viewModel.PlayDefaultAlarm();
             }
+        }
+
+        void AddUserDefinedAlarm(object sender, RoutedEventArgs e)
+        {
+            Alarm alarm = new Alarm(alarmTitleTextbox.Text, GetDateTimeFromUserInfo());
+            currentAlarms.Add(alarm);
+            UpdateAlarmDataGridCollectionWithCurrentAlarms();
+        }
+
+        DateTime GetDateTimeFromUserInfo()
+        {
+            DateTime dateTime = new DateTime();
+
+            dateTime = dateTime.AddHours(Double.Parse(alarmHourSelect.SelectedItem.ToString()));
+
+            if (alarmAmPmSelect.SelectedIndex == 1)
+            {
+                dateTime = dateTime.AddHours(12);
+            }
+
+            dateTime = dateTime.AddMinutes(Double.Parse(alarmMinuteSelect.SelectedItem.ToString()));
+
+            return dateTime;
         }
     }
 }

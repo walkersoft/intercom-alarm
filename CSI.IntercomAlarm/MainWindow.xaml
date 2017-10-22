@@ -49,7 +49,7 @@
                     <ComboBoxItem>AM</ComboBoxItem>
                     <ComboBoxItem>PM</ComboBoxItem>
                 </ComboBox>
-                <Button x:Name="applyAlarmButton" Content="Apply Changes" Width="100" Margin="5,0,0,0"/>
+                <Button x:Name="applyAlarmButton" Content="Apply Changes" Width="100" Margin="5,0,0,0" Click="AddUserDefinedAlarm"/>
             </WrapPanel>
 
         </StackPanel>
@@ -61,14 +61,14 @@
                     <Label Content="Current Alarms" FontWeight="Bold"/>
                     <DataGrid x:Name="currentAlarmsGrid" AutoGenerateColumns="False" MinHeight="170">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Alarm Title" Width="140"/>
-                            <DataGridTextColumn Header="Alarm Time" Width="100"/>
-                            <DataGridCheckBoxColumn Header="Active?"/>
+                            <DataGridTextColumn Header="Alarm Title" Width="140" Binding="{Binding Title}"/>
+                            <DataGridTextColumn Header="Alarm Time" Width="100" Binding="{Binding Time}" IsReadOnly="True"/>
+                            <DataGridCheckBoxColumn Header="Active?" Binding="{Binding IsActive}"/>
                         </DataGrid.Columns>                        
                     </DataGrid>
                     <WrapPanel Margin="0,5,0,0">
                         <Button x:Name="removeAlarmButton" Content="Remove Selected" Height="26" Width="120" Margin="0,0,5,0"/>
-                        <Button x:Name="saveAlarmsButton" Content="Save Alarms" Height="26" Width="120"/>
+                        <Button x:Name="saveAlarmsButton" Content="Save Alarms" Height="26" Width="120" Click="SaveAlarmsFile"/>
                     </WrapPanel>
                 </StackPanel>
 

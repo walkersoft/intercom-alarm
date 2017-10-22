@@ -8,14 +8,17 @@ namespace CSI.IntercomAlarm.Domain
     [Serializable]
     public class Alarm
     {
-        public string Title { get; private set; }
-        public DateTime Time { get; private set; }
-        public bool IsActive { get; private set; }
+        DateTime alarmTime;
+
+        public string Title { get; set; }
+        public string Time { get; set; }
+        public bool IsActive { get; set; }
 
         public Alarm(string title, DateTime time, bool isActive = true)
         {
             Title = title;
-            Time = time;
+            Time = time.ToShortTimeString();
+            alarmTime = time;
             IsActive = isActive;
         }
     }

@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using CSI.IntercomAlarm.Domain;
+using System.Windows.Controls;
 
 namespace CSI.IntercomAlarm.ViewModels
 {
