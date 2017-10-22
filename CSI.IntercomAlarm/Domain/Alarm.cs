@@ -18,8 +18,18 @@ namespace CSI.IntercomAlarm.Domain
         {
             Title = title;
             Time = time.ToShortTimeString();
-            alarmTime = time;
+            alarmTime = AdjustTimeToCurrentDay(time);
             IsActive = isActive;
+        }
+
+        DateTime AdjustTimeToCurrentDay(DateTime time)
+        {
+            DateTime newTime = DateTime.Today;
+
+            newTime = newTime.AddHours(time.Hour);
+            newTime = newTime.AddMinutes(time.Minute);
+
+            return newTime;
         }
     }
 }
