@@ -20,10 +20,10 @@
         <!-- Top Row (Menubar) -->
         <Menu Grid.Row="0" Background="{x:Null}">
             <MenuItem Header="File">
-                <MenuItem Header="New Alarms File"/>
-                <MenuItem Header="Open Alarms File"/>
-                <MenuItem Header="Save Alarms"/>
-                <MenuItem Header="Save Alarms As..."/>
+                <MenuItem Header="New Alarms File" Click="CreateNewAlarmsFile"/>
+                <MenuItem Header="Open Alarms File" Click="OpenNewAlarmsFile"/>
+                <MenuItem Header="Save Alarms" Click="SaveAlarmsFile"/>
+                <MenuItem Header="Save Alarms As..." Click="CreateNewAlarmsFile"/>
                 <Separator/>
                 <MenuItem Header="Close"/>
             </MenuItem>
@@ -35,7 +35,7 @@
                 <Label Content="Add/Edit Alarm" FontWeight="Bold"/>
                 <Label Content="|"/>
                 <Label Content="Current Alarms File: "/>
-                <Label x:Name="currentAlarmFilename" Width="300"/>
+                <Label x:Name="currentAlarmFilenameLabel" Width="300"/>
             </WrapPanel>
 
             <WrapPanel Margin="0,0,5,0">
@@ -76,7 +76,7 @@
                     <Label Content="Alarm Settings" FontWeight="Bold"/>
                     <Label Content="Alarm Sound File"/>
                     <WrapPanel>
-                        <TextBox x:Name="alarmSoundFilenameTextbox" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" IsEnabled="False" Width="158" Margin="0,0,5,0"/>
+                        <TextBox x:Name="alarmSoundFilenameTextbox" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" IsEnabled="False" Width="158" Margin="0,0,5,0"/>
                         <Button x:Name="browseForSoundButton" Content="Browse" Height="26" Width="70"/>
                     </WrapPanel>
                     <WrapPanel Margin="0,5,0,0" HorizontalAlignment="Stretch">

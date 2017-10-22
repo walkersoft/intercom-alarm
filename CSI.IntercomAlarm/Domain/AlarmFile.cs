@@ -9,22 +9,16 @@ namespace CSI.IntercomAlarm.Domain
     [Serializable]
     public class AlarmFile
     {
-        public ObservableCollection<Alarm> Alarms
-        {
-            get
-            {
-                return Alarms;
-            }
-
-            private set
-            {
-                Alarms = value;
-            }
-        }
+        public ObservableCollection<Alarm> Alarms { get; private set; }
 
         public AlarmFile()
         {
             Alarms = new ObservableCollection<Alarm>();
+        }
+
+        public AlarmFile(ObservableCollection<Alarm> alarms)
+        {
+            Alarms = alarms;
         }
 
         public void AddAlarm(Alarm alarm)

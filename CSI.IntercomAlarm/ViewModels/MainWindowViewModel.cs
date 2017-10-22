@@ -22,10 +22,22 @@ namespace CSI.IntercomAlarm.ViewModels
         {
             AlarmFile alarmFile;
 
-            alarmManager.CreateNewAlarmFile(filename);
-            alarmFile = alarmManager.OpenAlarmFile(filename);
-
+            alarmFile = alarmManager.CreateNewAlarmFile(filename);
             return alarmFile.Alarms;
+        }
+
+        public ObservableCollection<Alarm> OpenAlarmSet(string filename)
+        {
+            AlarmFile alarmFile;
+
+            alarmFile = alarmManager.OpenAlarmFile(filename);
+            return alarmFile.Alarms;
+        }
+
+        public void SaveAlarmSet(string filename, ObservableCollection<Alarm> alarms)
+        {
+            AlarmFile alarmFile = new AlarmFile(alarms);
+            alarmManager.SaveAlarmFile(filename, alarmFile);
         }
     }
 }
