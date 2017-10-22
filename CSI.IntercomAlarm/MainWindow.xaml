@@ -67,7 +67,7 @@
                         </DataGrid.Columns>                        
                     </DataGrid>
                     <WrapPanel Margin="0,5,0,0">
-                        <Button x:Name="removeAlarmButton" Content="Remove Selected" Height="26" Width="120" Margin="0,0,5,0"/>
+                        <Button x:Name="removeAlarmButton" Content="Remove Selected" Height="26" Width="120" Margin="0,0,5,0" Click="RemoveSelectedAlarmFromGrid"/>
                         <Button x:Name="saveAlarmsButton" Content="Save Alarms" Height="26" Width="120" Click="SaveAlarmsFile"/>
                     </WrapPanel>
                 </StackPanel>
@@ -77,7 +77,7 @@
                     <Label Content="Alarm Sound File"/>
                     <WrapPanel>
                         <TextBox x:Name="alarmSoundFilenameTextbox" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" IsEnabled="False" Width="158" Margin="0,0,5,0"/>
-                        <Button x:Name="browseForSoundButton" Content="Browse" Height="26" Width="70"/>
+                        <Button x:Name="browseForSoundButton" Content="Browse" Height="26" Width="70" Click="BrowseForCustomSoundFile"/>
                     </WrapPanel>
                     <WrapPanel Margin="0,5,0,0" HorizontalAlignment="Stretch">
                         <WrapPanel.Background>

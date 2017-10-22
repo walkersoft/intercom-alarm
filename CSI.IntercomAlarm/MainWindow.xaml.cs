@@ -206,10 +206,8 @@ namespace CSI.IntercomAlarm
 
         void TestPlayingAlarmSound(object sender, RoutedEventArgs e)
         {
-            if (useDefaultSoundCheckbox.IsChecked == true)
-            {
-                viewModel.PlayDefaultAlarm();
-            }
+            viewModel.ConfigureAlarmPlayer();
+            viewModel.PlayAlarm();
         }
 
         void AddUserDefinedAlarm(object sender, RoutedEventArgs e)
@@ -238,6 +236,34 @@ namespace CSI.IntercomAlarm
         public bool IsUsingDefaultAlarm()
         {
             return useDefaultSoundCheckbox.IsChecked == true;
+        }
+
+        public string GetCustomSoundFilename()
+        {
+            return alarmSoundFilenameTextbox.Text;
+        }
+
+        void RemoveSelectedAlarmFromGrid(object sender, RoutedEventArgs e)
+        {
+            if (currentAlarmsGrid.SelectedIndex != -1)
+            {
+                currentAlarms.RemoveAt(currentAlarmsGrid.SelectedIndex);
+                UpdateAlarmDataGridCollectionWithCurrentAlarms();
+            }
+        }
+
+        void BrowseForCustomSoundFile(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openDialog = new OpenFileDialog()
+            {
+                Filter = "Wave Sound File (*.wav)|*.wav"
+            };
+
+            if (openDialog.ShowDialog() == true)
+            {
+                alarmSoundFilenameTextbox.Text = openDialog.FileName;
+                viewModel.ConfigureAlarmPlayer();
+            }
         }
     }
 }

@@ -48,8 +48,9 @@ namespace CSI.IntercomAlarm.ViewModels
             ScheduleAlarms(alarms);
         }
 
-        void PlayAlarm()
+        public void PlayAlarm()
         {
+            ConfigureAlarmPlayer();
             alarmPlayer.PlayAlarm();
         }
 
@@ -73,9 +74,10 @@ namespace CSI.IntercomAlarm.ViewModels
             }
         }
 
-        void ConfigureAlarmPlayer()
+        public void ConfigureAlarmPlayer()
         {
             alarmPlayer.UsingDefaultSound = mainWindow.IsUsingDefaultAlarm();
+            alarmPlayer.AudioFile = mainWindow.GetCustomSoundFilename();
         }
     }
 }

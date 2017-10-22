@@ -45,8 +45,11 @@ namespace CSI.IntercomAlarm.Domain
 
         void PlayCustomAlarm()
         {
-            player.Stream = File.OpenRead(AudioFile);
-            player.Play();
+            if (File.Exists(AudioFile))
+            {
+                player.Stream = new MemoryStream(File.ReadAllBytes(AudioFile));
+                player.Play();
+            }
         }
     }
 }
