@@ -21,7 +21,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_5F40E526E5D7479A9182BBB7A33F759D"
+        "MsmKey" = "8:_F916FF4A10A44124948EF903C968F441"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -49,6 +49,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -65,6 +81,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -94,10 +126,10 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5F40E526E5D7479A9182BBB7A33F759D"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F916FF4A10A44124948EF903C968F441"
             {
-            "SourcePath" = "8:..\\..\\..\\..\\..\\Downloads\\VS2013 Image Library\\Visual Studio 2013 Image Library\\x--archive--x\\Objects - VS2012\\png_format\\WinVista\\008_Reminder_128x128_72.ico"
-            "TargetName" = "8:008_Reminder_128x128_72.ico"
+            "SourcePath" = "8:..\\CSI.IntercomAlarm\\Resources\\bell_icon.ico"
+            "TargetName" = "8:bell_icon.ico"
             "Tag" = "8:"
             "Folder" = "8:_19BE9452BC33496FB32FF4AF5A65EE1F"
             "Condition" = "8:"
@@ -170,15 +202,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:CSI Intercom Alarm Scheduler"
-        "ProductCode" = "8:{4410EFAA-C38B-434B-BEC9-39899E5094EB}"
-        "PackageCode" = "8:{CD089777-C910-4F0F-B97B-EBB45E889FFB}"
+        "ProductCode" = "8:{40969A99-EFCD-445D-BB95-99A4EB6FF3F6}"
+        "PackageCode" = "8:{0FAF2AE6-D63A-427E-95C3-BE34287D84F8}"
         "UpgradeCode" = "8:{F46A906C-64CF-4358-8647-C79498CC08D6}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.0.1"
         "Manufacturer" = "8:Cedar Siding Inc."
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -188,7 +220,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:CSI Intercom Alarm Scheduler"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:"
+        "ARPPRODUCTICON" = "8:_F916FF4A10A44124948EF903C968F441"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -291,21 +323,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_1353AB821E604129B91FC9F92AE1E73A"
-            {
-            "Name" = "8:CSI Alarm Scheduler"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_28BAC4CC69ED4DF0ADB7A68032DD4330"
-            "Folder" = "8:_52673FB0BB8E4775B0434440EBF4C984"
-            "WorkingFolder" = "8:_19BE9452BC33496FB32FF4AF5A65EE1F"
-            "Icon" = "8:_5F40E526E5D7479A9182BBB7A33F759D"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_2D5E3E0D84B8496B8C13654317F901BE"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_5A6F2D5A54314767B77845CB852C3489"
             {
             "Name" = "8:CSI Alarm Scheduler"
             "Arguments" = "8:"
@@ -316,7 +334,21 @@
             "Target" = "8:_28BAC4CC69ED4DF0ADB7A68032DD4330"
             "Folder" = "8:_47DC4D4607914457B2283D54CAB936B6"
             "WorkingFolder" = "8:_19BE9452BC33496FB32FF4AF5A65EE1F"
-            "Icon" = "8:_5F40E526E5D7479A9182BBB7A33F759D"
+            "Icon" = "8:_F916FF4A10A44124948EF903C968F441"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_A5462B399B994B56B7EA48044288D8C5"
+            {
+            "Name" = "8:CSI Alarm Scheduler"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_28BAC4CC69ED4DF0ADB7A68032DD4330"
+            "Folder" = "8:_52673FB0BB8E4775B0434440EBF4C984"
+            "WorkingFolder" = "8:_19BE9452BC33496FB32FF4AF5A65EE1F"
+            "Icon" = "8:_F916FF4A10A44124948EF903C968F441"
             "Feature" = "8:"
             }
         }

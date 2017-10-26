@@ -59,13 +59,19 @@
             <WrapPanel>
                 <StackPanel Margin="5,0,0,0">
                     <Label Content="Current Alarms" FontWeight="Bold"/>
-                    <DataGrid x:Name="currentAlarmsGrid" AutoGenerateColumns="False" MinHeight="170">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Alarm Title" Width="140" Binding="{Binding Title}"/>
-                            <DataGridTextColumn Header="Alarm Time" Width="100" Binding="{Binding Time}" IsReadOnly="True"/>
-                            <DataGridCheckBoxColumn Header="Active?" Binding="{Binding IsActive}"/>
-                        </DataGrid.Columns>                        
-                    </DataGrid>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <DataGrid x:Name="currentAlarmsGrid" AutoGenerateColumns="False" MinHeight="170" MaxHeight="170" VerticalScrollBarVisibility="Visible"  Grid.Row="0">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Alarm Title" Width="120" Binding="{Binding Title}"/>
+                                <DataGridTextColumn Header="Alarm Time" Width="100" Binding="{Binding Time}" IsReadOnly="True"/>
+                                <DataGridCheckBoxColumn Header="Active?" Binding="{Binding IsActive}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                    
                     <WrapPanel Margin="0,5,0,0">
                         <Button x:Name="removeAlarmButton" Content="Remove Selected" Height="26" Width="120" Margin="0,0,5,0" Click="RemoveSelectedAlarmFromGrid"/>
                         <Button x:Name="saveAlarmsButton" Content="Save Alarms" Height="26" Width="120" Click="SaveAlarmsFile"/>

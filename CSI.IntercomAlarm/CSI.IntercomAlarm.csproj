@@ -34,7 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>008_Reminder_128x128_72.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -108,10 +109,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\TaskbarIcon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="008_Reminder_128x128_72.ico" />
+    <Resource Include="Resources\bell_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
