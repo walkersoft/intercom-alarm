@@ -221,6 +221,11 @@ namespace CSI.IntercomAlarm
 
             dateTime = dateTime.AddHours(Double.Parse(alarmHourSelect.SelectedItem.ToString()));
 
+            if (alarmHourSelect.SelectedIndex == 11)
+            {
+                dateTime = dateTime.Subtract((new TimeSpan(12, 0, 0)));
+            }
+
             if (alarmAmPmSelect.SelectedIndex == 1)
             {
                 dateTime = dateTime.AddHours(12);

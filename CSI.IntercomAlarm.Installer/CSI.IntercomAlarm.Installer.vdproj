@@ -202,15 +202,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:CSI Intercom Alarm Scheduler"
-        "ProductCode" = "8:{40969A99-EFCD-445D-BB95-99A4EB6FF3F6}"
-        "PackageCode" = "8:{0FAF2AE6-D63A-427E-95C3-BE34287D84F8}"
+        "ProductCode" = "8:{359C59CC-2D7A-4BAA-B938-42911E3A9F8C}"
+        "PackageCode" = "8:{48AD1A8D-268D-496A-89F0-9B332B8A34BF}"
         "UpgradeCode" = "8:{F46A906C-64CF-4358-8647-C79498CC08D6}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.0.1"
+        "ProductVersion" = "8:1.0.2"
         "Manufacturer" = "8:Cedar Siding Inc."
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -780,7 +780,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_28BAC4CC69ED4DF0ADB7A68032DD4330"
             {
-            "SourcePath" = "8:..\\CSI.IntercomAlarm\\obj\\Release\\CSI.IntercomAlarm.exe"
+            "SourcePath" = "8:..\\CSI.IntercomAlarm\\obj\\Debug\\CSI.IntercomAlarm.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_19BE9452BC33496FB32FF4AF5A65EE1F"
