@@ -1,5 +1,7 @@
 # CSI Intercom Alarm Scheduler
 
+This software is abandoned and no longer maintained.
+
 ## About
 A small desktop app to schedule an alarm sound to be played 
 through the PC's audio playback device. Alarms can be saved
